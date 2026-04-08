@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gcc)",
+      "Bash(g++)",
+      "Bash(cmake)",
+      "Bash(make)",
+      "Bash(mkdir)",
+      "Bash(rm)",
+      "Bash(cp)",
+      "Bash(cat)",
+      "Bash(grep)",
+      "Bash(find)",
+      "Glob",
+      "Grep",
+      "Read",
+      "Write"
+    ]
+  },
+  "hooks": {
+    "BeforeCommit": [
+      { "type": "skill", "skill": "pre-commit-check" },
+      { "type": "skill", "skill": "code-review" }
+    ],
+    "AfterTest": [
+      { "type": "skill", "skill": "unit-test" },
+      { "type": "skill", "skill": "functional-test" }
+    ],
+    "BeforeRelease": [
+      { "type": "skill", "skill": "release-plan" },
+      { "type": "skill", "skill": "performance-test" }
+    ]
+  },
+  "env": {
+    "BUILD_TYPE": "Release",
+    "CXX_STANDARD": "11"
+  }
+}
