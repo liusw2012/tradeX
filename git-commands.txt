@@ -1,0 +1,19 @@
+git config --list
+
+git init 
+
+git branch -M main
+
+git add -A
+
+git commit -m "xxx"
+
+git remote add origin git@github.com:liusw2012/tradeX.git
+
+git push -u origin main
+
+git status
+
+git log
+
+git remote -v
